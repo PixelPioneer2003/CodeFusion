@@ -1,0 +1,101 @@
+/* OTP Verification Component CSS */
+
+/* General Container Styling */
+.otp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* OTP Box Styling */
+.otp-box {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading Styling */
+.otp-box h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+.otp-box input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.otp-box input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+}
+
+/* Button Styling */
+.otp-box button {
+    width: 100%;
+    padding: 12px 15px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.otp-box button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Error Message Styling */
+.otp-box .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .otp-container {
+        padding: 15px;
+    }
+
+    .otp-box {
+        padding: 20px;
+    }
+
+    .otp-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .otp-box input {
+        font-size: 0.9rem;
+    }
+
+    .otp-box button {
+        font-size: 1rem;
+    }
+}

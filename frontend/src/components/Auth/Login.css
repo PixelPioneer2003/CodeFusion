@@ -1,0 +1,96 @@
+/* Login Component CSS */
+
+/* General Container Styling */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    /* Remove overflow */
+    padding: 20px;
+    /* Ensure proper spacing on small screens */
+}
+
+/* Login Box Styling */
+.login-box {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading Styling */
+.login-box h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Fields Styling */
+.login-box input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.login-box input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+}
+
+/* Button Styling */
+.login-box button {
+    width: 100%;
+    padding: 12px 15px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.login-box button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 15px;
+        /* Additional spacing for smaller screens */
+    }
+
+    .login-box {
+        padding: 20px;
+    }
+
+    .login-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .login-box input {
+        font-size: 0.9rem;
+    }
+
+    .login-box button {
+        font-size: 1rem;
+    }
+}

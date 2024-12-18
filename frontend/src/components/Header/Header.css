@@ -1,0 +1,71 @@
+/* Header Container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    /* Gradient background */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Button Styling */
+.nav-links button {
+    background: transparent;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.nav-links button:hover {
+    background: white;
+    color: #2575fc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        width: 120px;
+    }
+
+    .nav-links button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}

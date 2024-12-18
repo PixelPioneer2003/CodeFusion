@@ -1,0 +1,72 @@
+/* Dashboard Container */
+.dashboard-container {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    /* Light background color */
+    padding: 80px 20px 20px 20px;
+    /* Top padding adjusted for fixed header */
+    min-height: 100vh;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    /* Dark text color */
+    margin-bottom: 30px;
+}
+
+/* Dashboard Links Container */
+.dashboard-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Individual Link Style */
+.dashboard-link {
+    text-decoration: none;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    /* Gradient background */
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 200px;
+    text-align: center;
+}
+
+/* Hover Effect for Links */
+.dashboard-link:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    /* Inverted gradient on hover */
+    transform: translateY(-5px);
+}
+
+/* Active Link Styling */
+.dashboard-link:active {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    /* Keep the same on active */
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-links {
+        gap: 10px;
+    }
+
+    .dashboard-link {
+        width: 150px;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .dashboard-title {
+        font-size: 2rem;
+    }
+}

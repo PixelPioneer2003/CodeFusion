@@ -1,0 +1,59 @@
+const PlatformProfile = require("../models/platformProfile");
+const {
+  fetchLeetcodeData,
+  fetchCodechefData,
+  fetchCodeforcesData,
+} = require("../utils/platformApiHelpers");
+// Create a new platform entry
+exports.createPlatform = async (req, res) => {
+  const { platform, username } = req.body;
+  ExtractUserId, console.log("printing the extracted user id");
+  console.log("platform and username  " + platform + " " + username);
+  if (!platform || !username) {
+    return res
+      .status(400)
+      .json({ message: "Platform and Username are required" });
+  }
+
+  try {
+    let platformData;
+
+    // Fetch platform data based on the platform selected
+    if (platform === "Leetcode") {
+      platformData = await fetchLeetcodeData(username);
+    } else if (platform === "Codechef") {
+      platformData = await fetchCodechefData(username);
+    } else if (platform === "Codeforces") {
+      platformData = await fetchCodeforcesData(username);
+    } else {
+      return res.status(400).json({ message: "Invalid platform" });
+    }
+    const platformpayload = { username, platform, userId };
+    await PlatformProfile.create(platformpayload);
+
+    return res.status(200).json({ data: platformData.data });
+  } catch (error) {
+    console.error("Error fetching platform data:", error);
+    return res.status(500).json({ message: "Error fetching platform data" });
+  }
+};
+
+// Fetch all platform entries
+exports.getAllPlatformDetail = async (req, res) => {
+  try {
+    const platformDetails = await PlatformProfile.find();
+
+    res.status(200).json({
+      success: true,
+      message: "Platform profiles fetched successfully",
+      platformDetails,
+    });
+  } catch (error) {
+    console.error("Error fetching platform profiles:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error at platform profile retrieval",
+      error: error.message,
+    });
+  }
+};

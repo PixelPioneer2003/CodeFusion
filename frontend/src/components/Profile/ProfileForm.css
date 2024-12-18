@@ -1,0 +1,113 @@
+/* General Styling for Profile Form */
+.profile-form {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Form */
+.profile-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Heading Styling */
+.profile-form h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #6a11cb;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Label Styling */
+.profile-form label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 10px 0;
+    display: block;
+    color: #555;
+}
+
+/* Input and Select Styling */
+.profile-form input,
+.profile-form select,
+.profile-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.profile-form input:focus,
+.profile-form select:focus,
+.profile-form textarea:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+}
+
+/* Disable Styling for City Input */
+.profile-form input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+/* Textarea Styling */
+.profile-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Button Styling */
+.profile-form button {
+    width: 100%;
+    padding: 12px 15px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.profile-form button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-form {
+        padding: 20px;
+    }
+
+    .profile-form h2 {
+        font-size: 1.8rem;
+    }
+
+    .profile-form label {
+        font-size: 0.9rem;
+    }
+
+    .profile-form input,
+    .profile-form select,
+    .profile-form textarea,
+    .profile-form button {
+        font-size: 0.9rem;
+    }
+}
