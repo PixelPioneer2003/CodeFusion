@@ -65,12 +65,12 @@ exports.createPlatform = async (req, res) => {
           message: "No such user exists on Codeforces",
         });
       }
-
-      return res.status(200).json({
-        success: true,
-        message: "Platform profiles added successfully",
-      });
     }
+
+    return res.status(200).json({
+      success: true,
+      message: "Platform profiles added successfully",
+    });
 
     // If platform is not LeetCode, you can handle other platforms here
   } catch (error) {
