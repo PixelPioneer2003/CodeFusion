@@ -10,6 +10,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthContextProvider = ({ children }) => {
   // State to track if the user is logged in
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const BASE_URL = "https://codefusionbackend.onrender.com";
 
   // State to store user details
   const [user, setUser] = useState({
@@ -37,7 +38,7 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, isLoggedIn, updateUser, logout, login }}
+      value={{ user, isLoggedIn, updateUser, logout, login, BASE_URL }}
     >
       {children}
     </AuthContext.Provider>

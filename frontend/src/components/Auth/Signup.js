@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
-
+import { useAuth } from "../../context/AuthContext";
 const Signup = () => {
+  const { BASE_URL } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -21,10 +22,9 @@ const Signup = () => {
   // Step 1: Send OTP to the email
   const handleSendOtp = async () => {
     try {
-      const otpResponse = await axios.post(
-        "http://localhost:3000/api/v1/send-otp",
-        { email: formData.email }
-      );
+      const otpResponse = await axios.post(`${BASE_URL}/api/v1/send-otp`, {
+        email: formData.email,
+      });
 
       if (otpResponse.data.success) {
         alert("OTP sent to your email.");

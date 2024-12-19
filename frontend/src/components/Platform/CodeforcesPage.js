@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchAllProfiles } from "../../api/platformApi"; // Assume this function fetches Codeforces-specific data from your backend
+import { useAuth } from "../../context/AuthContext";
 
 const CodeforcesPage = () => {
+  const { BASE_URL } = useAuth();
   const { userId } = useParams();
   const [profiles, setProfiles] = useState([]); // Change to store multiple profiles
   const [error, setError] = useState(null);
@@ -11,7 +13,7 @@ const CodeforcesPage = () => {
     const getCodeforcesProfiles = async () => {
       try {
         const platform = "Codeforces";
-        const data = await fetchAllProfiles(userId, platform); // Fetch Codeforces profiles associated with userId
+        const data = await fetchAllProfiles(userId, platform, BASE_URL); // Fetch Codeforces profiles associated with userId
         console.log("Codeforces data received:", data);
         setProfiles(data); // Store multiple profiles in the state
       } catch (err) {

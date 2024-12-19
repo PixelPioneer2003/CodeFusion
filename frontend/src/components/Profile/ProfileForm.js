@@ -3,7 +3,7 @@ import { updateProfile } from "../../api/profileApi";
 import "./ProfileForm.css"; // Import the CSS file
 import { useAuth } from "../../context/AuthContext";
 const ProfileForm = ({ initialProfile }) => {
-  const { user } = useAuth();
+  const { user, BASE_URL } = useAuth();
   const [profile, setProfile] = useState(initialProfile);
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,7 +14,7 @@ const ProfileForm = ({ initialProfile }) => {
     e.preventDefault();
     try {
       console.log("handle submit of profile form main present h");
-      const response = await updateProfile(user.userId, profile);
+      const response = await updateProfile(user.userId, profile, BASE_URL);
       alert(response.message || "Profile updated successfully!");
     } catch (error) {
       alert(error.message || "Failed to update profile");

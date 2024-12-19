@@ -10,7 +10,7 @@ const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, BASE_URL } = useAuth();
 
   useEffect(() => {
     if (!user.userId) {
@@ -25,7 +25,7 @@ const ProfilePage = () => {
       console.log("userid is " + " " + user.userId);
 
       try {
-        const data = await getProfile(user.userId);
+        const data = await getProfile(user.userId, BASE_URL);
         setProfile(data);
       } catch (error) {
         console.error("Error fetching profile:", error);

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./OtpVerification.css";
 import { useNavigate, useLocation } from "react-router-dom";
-
+import { useAuth } from "../../context/AuthContext";
 const OtpVerification = () => {
+  const { BASE_URL } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const { formData } = location.state; // Retrieve formData from state
@@ -14,7 +15,7 @@ const OtpVerification = () => {
   const handleOtpVerification = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/verify-otp",
+        `${BASE_URL}/api/v1/verify-otp`,
         { email: formData.email, otp } // Use email from formData
       );
 

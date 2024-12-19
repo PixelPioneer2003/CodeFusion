@@ -9,8 +9,7 @@ const codeforcesSchema = new mongoose.Schema(
     },
     handle: {
       type: String,
-      required: true,
-      unique: true, // Ensuring handle is unique for each user
+      required: true, // Ensuring handle is unique for each user
     },
     contribution: {
       type: Number,

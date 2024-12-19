@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { addPlatform } from "../../api/platformApi";
 import { useParams } from "react-router-dom";
 import "./AddPlatform.css"; // Import the CSS file
+import { useAuth } from "../../context/AuthContext";
 
 const AddPlatform = () => {
+  const { BASE_URL } = useAuth();
   const [platform, setPlatform] = useState("");
   const [username, setUsername] = useState("");
   const [error, setError] = useState(null);
@@ -18,7 +20,7 @@ const AddPlatform = () => {
     }
     const platformData = { platform, username, userId };
     try {
-      const response = await addPlatform(platformData);
+      const response = await addPlatform(platformData, BASE_URL);
       if (response && response.data.success) {
         setSuccess(true);
         setError(null);

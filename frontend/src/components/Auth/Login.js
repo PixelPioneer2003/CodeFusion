@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { updateUser, user, login, logout, isLoggedIn } = useAuth();
+  const { updateUser, user, login, logout, isLoggedIn, BASE_URL } = useAuth();
 
   console.log("login page pr user deatil print krte hue");
   console.log(user.name);
@@ -27,10 +27,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/login",
-        formData
-      );
+      const response = await axios.post(`${BASE_URL}/api/v1/login`, formData);
       console.log("Login Response:", response.data);
 
       if (response.data.success) {

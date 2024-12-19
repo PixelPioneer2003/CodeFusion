@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchAllProfiles } from "../../api/platformApi"; // Assume this function fetches data from your backend
+import { useAuth } from "../../context/AuthContext";
 
 const LeetCodePage = () => {
+  const { BASE_URL } = useAuth();
   const { userId } = useParams();
   const [profiles, setProfiles] = useState([]); // Store multiple profiles
   const [error, setError] = useState(null);
@@ -10,8 +12,9 @@ const LeetCodePage = () => {
   useEffect(() => {
     const getLeetCodeProfiles = async () => {
       try {
+        console.log("frontend of leetcode");
         const platform = "Leetcode";
-        const data = await fetchAllProfiles(userId, platform); // Fetch LeetCode profiles associated with userId
+        const data = await fetchAllProfiles(userId, platform, BASE_URL); // Fetch LeetCode profiles associated with userId
         console.log("LeetCode data received:", data);
         setProfiles(data); // Set all profiles from the response
       } catch (err) {
