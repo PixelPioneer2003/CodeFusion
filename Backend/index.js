@@ -10,15 +10,21 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 
+// Configure CORS options
 const corsOptions = {
-  origin: true,
-  credentials: true,
+  origin: 'https://codefusionfrontend.onrender.com', // Allow only your frontend domain
+  credentials: true, // Enable cookies and credentials to be sent
+  methods: 'GET, POST, PUT, DELETE', // Allow specific methods
+  allowedHeaders: 'Content-Type, Authorization' // Allow specific headers
 };
-// Enable CORS for all routes
+
+// Enable CORS with the specified options
 app.use(cors(corsOptions));
-// cookie parser
+
+// Cookie parser middleware
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
+
 // Middleware to parse JSON request body
 app.use(express.json());
 
@@ -30,7 +36,7 @@ app.get("/", (req, res) => {
 // Mount routes
 app.use("/api/v1", CodeFusionRoutes);
 
-// Connect to database
+// Connect to the database
 dbConnect();
 
 // Start the server
