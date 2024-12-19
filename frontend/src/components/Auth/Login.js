@@ -6,7 +6,7 @@ import { useAuth } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { updateUser, user, login, logout, isLoggedIn, BASE_URL } = useAuth();
+  const { user, login, logout, BASE_URL } = useAuth();
 
   console.log("login page pr user deatil print krte hue");
   console.log(user.name);

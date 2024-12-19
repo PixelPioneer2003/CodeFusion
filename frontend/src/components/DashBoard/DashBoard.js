@@ -1,11 +1,10 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Dashboard.css"; // Import the CSS file
 import Header from "../Header/Header";
 import { useAuth } from "../../context/AuthContext";
 const Dashboard = () => {
-  const location = useLocation();
-  const { user, login, logout } = useAuth();
+  const { user } = useAuth();
   console.log("inside dashboard printing user detail");
   console.log(user);
   return (

@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 import ProfileForm from "../components/Profile/ProfileForm";
 import ProfileCard from "../components/Profile/ProfileCard";
 import { getProfile } from "../api/profileApi";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
-  const location = useLocation();
   const navigate = useNavigate();
   const { user, BASE_URL } = useAuth();
 
@@ -22,7 +21,7 @@ const ProfilePage = () => {
     const fetchProfile = async () => {
       console.log("right now we are in fetchProfile");
       console.log(user);
-      console.log("userid is " + " " + user.userId);
+      console.log("userid is " + user.userId);
 
       try {
         const data = await getProfile(user.userId, BASE_URL);

@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Dashboard from "./components/DashBoard/DashBoard";
-import ProfileCard from "./components/Profile/ProfileCard";
-import ProfileForm from "./components/Profile/ProfileForm";
 import ProfilePage from "./Pages/ProfilePage";
 import Signup from "./components/Auth/Signup";
 import Login from "./components/Auth/Login";

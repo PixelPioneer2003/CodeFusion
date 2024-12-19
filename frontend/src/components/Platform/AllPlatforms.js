@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { fetchAllProfiles } from "../../api/platformApi"; // Assume this function fetches data from your backend
+import React from "react"; // Assume this function fetches data from your backend
 import LeetCodePage from "./LeetCodePage";
 import CodeforcesPage from "./CodeforcesPage";
 
