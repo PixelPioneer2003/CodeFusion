@@ -31,7 +31,7 @@ const OtpVerification = () => {
   // Signup function that saves user details after OTP is verified
   const handleSignup = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/v1/signup", {
+      const response = await axios.post(`${BASE_URL}/api/v1/signup`, {
         ...formData,
       });
 
